@@ -1,0 +1,600 @@
+{
+    "pages": [
+     {
+      "name": "INFORMACION GENERAL",
+      "elements": [
+       {
+        "type": "text",
+        "name": "question1",
+        "title": ". Fecha de la entrevista",
+        "inputType": "date"
+       },
+       {
+        "type": "text",
+        "name": "question2",
+        "title": "Hora de inicio",
+        "inputType": "time"
+       },
+       {
+        "type": "text",
+        "name": "question3",
+        "title": "Entrevistador (nombre)"
+       },
+       {
+        "type": "text",
+        "name": "question4",
+        "title": "Sector"
+       },
+       {
+        "type": "multipletext",
+        "name": "question5",
+        "title": "Ubicación de la casa",
+        "items": [
+         {
+          "name": "text1",
+          "title": "Latitud"
+         },
+         {
+          "name": "text2",
+          "title": "Longitud"
+         }
+        ]
+       },
+       {
+        "type": "dropdown",
+        "name": "question7",
+        "title": "Estatus de la entrevista",
+        "choices": [
+         {
+          "value": "1",
+          "text": "Casa vacía "
+         },
+         {
+          "value": "2",
+          "text": "No estaban"
+         },
+         {
+          "value": "3",
+          "text": "No se realizó"
+         },
+         {
+          "value": "4",
+          "text": "Se realizó"
+         }
+        ]
+       },
+       {
+        "type": "text",
+        "name": "question6",
+        "title": "Informante (nombre)"
+       }
+      ]
+     },
+     {
+      "name": "DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD",
+      "elements": [
+       {
+        "type": "matrixdynamic",
+        "name": "DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1",
+        "title": "DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD",
+        "columns": [
+         {
+          "name": "No",
+          "title": "No.",
+          "cellType": "text",
+          "inputType": "number"
+         },
+         {
+          "name": "Miembro",
+          "title": "Miembro del Hogar",
+          "cellType": "text"
+         },
+         {
+          "name": "Parentesco",
+          "title": "Parentesco con el jefe del hogar",
+          "cellType": "dropdown",
+          "choices": [
+           {
+            "value": "1",
+            "text": "Jefe de Familia"
+           },
+           {
+            "value": "2",
+            "text": "Cónyuge"
+           },
+           {
+            "value": "3",
+            "text": "Hijo"
+           },
+           {
+            "value": "4",
+            "text": " Madre o padre"
+           },
+           {
+            "value": "5",
+            "text": "Nietos"
+           },
+           {
+            "value": "6",
+            "text": "Abuelos"
+           },
+           {
+            "value": "7",
+            "text": "Yerno o nuera"
+           },
+           {
+            "value": "8",
+            "text": "Cuñado"
+           },
+           {
+            "value": "9",
+            "text": "Hermano(a)"
+           },
+           {
+            "value": "10",
+            "text": "Otros"
+           }
+          ]
+         },
+         {
+          "name": "sexo",
+          "title": "Sexo",
+          "cellType": "dropdown",
+          "choices": [
+           {
+            "value": "1",
+            "text": "M"
+           },
+           {
+            "value": "2",
+            "text": "F"
+           }
+          ]
+         },
+         {
+          "name": "edad años",
+          "title": "Edad (años cumplidos)",
+          "cellType": "text",
+          "inputType": "number"
+         },
+         {
+          "name": "edad meses",
+          "title": "Edad (meses después de año cumplido, menores de 5 años)",
+          "cellType": "text",
+          "inputType": "number"
+         },
+         {
+          "name": "nivel academico",
+          "title": "Nivel académi co",
+          "cellType": "dropdown",
+          "choices": [
+           {
+            "value": "1",
+            "text": "No sabe "
+           },
+           {
+            "value": "2",
+            "text": "Ninguno y no lee ni escribe"
+           },
+           {
+            "value": "3",
+            "text": "Ninguno y lee y escribe"
+           },
+           {
+            "value": "4",
+            "text": "Preprimaria"
+           },
+           {
+            "value": "5",
+            "text": "Primaria"
+           },
+           {
+            "value": "6",
+            "text": "Básico"
+           },
+           {
+            "value": "7",
+            "text": "Diversificado"
+           },
+           {
+            "value": "8",
+            "text": "Universitario"
+           },
+           {
+            "value": "9",
+            "text": "Postgrado"
+           },
+           {
+            "value": "10",
+            "text": "Alfabetización"
+           }
+          ]
+         },
+         {
+          "name": "grado aprobado",
+          "title": "Último grado aprobado",
+          "cellType": "dropdown",
+          "choices": [
+           {
+            "value": "0",
+            "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} = 1\nor {DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} = 2\nor {DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} = 3\nor {DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} = 10"
+           },
+           {
+            "value": "1",
+            "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} >= 4\nAND {DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} <= 9"
+           },
+           {
+            "value": "2",
+            "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} >= 5\nAND {DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} <= 9"
+           },
+           {
+            "value": "3",
+            "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} >= 5\nAND {DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} <= 8"
+           },
+           {
+            "value": "4",
+            "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} = 5\nOR {DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico}  = 8"
+           },
+           {
+            "value": "5",
+            "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} = 5\nOR {DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico}  = 8"
+           },
+           {
+            "value": "6",
+            "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico} = 5\nOR {DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].nivel academico}  = 8"
+           }
+          ]
+         },
+         {
+          "name": "repitio grado",
+          "title": "Repitió algún grado",
+          "cellType": "dropdown",
+          "choices": [
+           {
+            "value": "1",
+            "text": "si"
+           },
+           {
+            "value": "2",
+            "text": "no"
+           },
+           {
+            "value": "3",
+            "text": "no sé"
+           }
+          ]
+         },
+         {
+          "name": "ocupación",
+          "title": "Ocupación o fuente de ingresos principal",
+          "cellType": "dropdown",
+          "choices": [
+           {
+            "value": "1",
+            "text": "Ama de casa"
+           },
+           {
+            "value": "2",
+            "text": "Remesas"
+           },
+           {
+            "value": "3",
+            "text": "Agricultor"
+           },
+           {
+            "value": "4",
+            "text": "Comerciante ambulante"
+           },
+           {
+            "value": "5",
+            "text": "Comerciante fijo"
+           },
+           {
+            "value": "6",
+            "text": "Comerciante agropecuario"
+           },
+           {
+            "value": "7",
+            "text": "Crianza de animales"
+           },
+           {
+            "value": "8",
+            "text": "Empleado no oficinista"
+           },
+           {
+            "value": "9",
+            "text": "Empleado oficinista"
+           },
+           {
+            "value": "10",
+            "text": "Profesional"
+           },
+           {
+            "value": "11",
+            "text": "Estudiante"
+           },
+           {
+            "value": "12",
+            "text": "Incapacitado"
+           },
+           {
+            "value": "13",
+            "text": " Jornalero agrícola "
+           },
+           {
+            "value": "14",
+            "text": " Jornalero no agrícola"
+           },
+           {
+            "value": "15",
+            "text": "Trabajador oficios domésticos"
+           },
+           {
+            "value": "16",
+            "text": "Trabajador manufacturas caseras"
+           },
+           {
+            "value": "17",
+            "text": "Agente de seguridad"
+           },
+           {
+            "value": "18",
+            "text": "Desempleado"
+           },
+           {
+            "value": "19",
+            "text": " Vive de sus rentas o jubilado"
+           },
+           {
+            "value": "20",
+            "text": "Otros"
+           }
+          ]
+         },
+         {
+          "name": "Aporte al presupuesto",
+          "title": "Aporta al presupuesto familiar",
+          "cellType": "dropdown",
+          "choices": [
+           {
+            "value": "1",
+            "text": "Sí"
+           },
+           {
+            "value": "2",
+            "text": "No"
+           },
+           {
+            "value": "3",
+            "text": "No sé"
+           }
+          ]
+         },
+         {
+          "name": "Salario quincenal",
+          "title": "Precio del jornal o salario quincenal (Q)"
+         },
+         {
+          "name": "Días trabajado",
+          "title": "Días al mes trabajados"
+         },
+         {
+          "name": "Meses trabajados",
+          "title": "Meses al año trabajados"
+         },
+         {
+          "name": "Padeció enfermedad",
+          "title": "El mes pasado, ¿padeció diarrea o alguna enfermedad respiratoria?",
+          "cellType": "dropdown",
+          "choices": [
+           {
+            "value": "1",
+            "text": "sí"
+           },
+           {
+            "value": "2",
+            "text": "no"
+           },
+           {
+            "value": "3",
+            "text": "no sé"
+           }
+          ]
+         },
+         {
+          "name": "Trato de enfermedad",
+          "title": "¿En dónde o con quién se trató la enfermedad?",
+          "cellType": "dropdown",
+          "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].Padeció enfermedad} = 1",
+          "choices": [
+           {
+            "value": "1",
+            "text": "Puesto de salud"
+           },
+           {
+            "value": "2",
+            "text": "Centro de salud"
+           },
+           {
+            "value": "3",
+            "text": "CAP"
+           },
+           {
+            "value": "4",
+            "text": "Hospital"
+           },
+           {
+            "value": "5",
+            "text": "Farmacia"
+           },
+           {
+            "value": "6",
+            "text": "Curandero"
+           },
+           {
+            "value": "7",
+            "text": "Familiar o vecino"
+           },
+           {
+            "value": "8",
+            "text": "En otro país"
+           },
+           {
+            "value": "9",
+            "text": "No se trató"
+           },
+           {
+            "value": "10",
+            "text": "Se trató en casa"
+           }
+          ]
+         },
+         {
+          "name": "estado de embarazada",
+          "title": "ha estado embarazada",
+          "cellType": "dropdown",
+          "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].Parentesco} = 2",
+          "choices": [
+           {
+            "value": "1",
+            "text": "si"
+           },
+           {
+            "value": "2",
+            "text": "no"
+           },
+           {
+            "value": "3",
+            "text": "no sé"
+           }
+          ]
+         },
+         {
+          "name": "total de embarazos",
+          "title": "¿Cuántos embarazos ha tenido en total?",
+          "cellType": "text",
+          "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].estado de embarazada} = 1",
+          "inputType": "number"
+         },
+         {
+          "name": "hijos vivos totales",
+          "title": "¿Cuántos hijos nacidos vivos han tenido?",
+          "cellType": "text",
+          "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].estado de embarazada} = 1",
+          "inputType": "number"
+         },
+         {
+          "name": "hijos actuales vivos",
+          "title": "¿Actualmente cuántos hijos vivos tiene?",
+          "cellType": "text",
+          "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].estado de embarazada} = 1",
+          "inputType": "number"
+         },
+         {
+          "name": "hijos totales muertos",
+          "title": " cuántos hijos vivos tiene? E. ¿Cuántos hijos se le han muerto?",
+          "cellType": "text",
+          "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].estado de embarazada} = 1",
+          "inputType": "number"
+         },
+         {
+          "name": "mortinatos",
+          "title": "¿Cuántos hijos nacieron muertos (mortinatos)?",
+          "cellType": "text",
+          "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].estado de embarazada} = 1",
+          "inputType": "number"
+         },
+         {
+          "name": "abortos",
+          "title": "¿Cuántas pérdidas o abortos han tenido?",
+          "cellType": "text",
+          "visibleIf": "{DATOS DE COMPOSICIÓN DE LA FAMILIA Y MORBILIDAD1[0].estado de embarazada} = 1",
+          "inputType": "number"
+         }
+        ],
+        "rowCount": 1
+       },
+       {
+        "type": "dropdown",
+        "name": "question8",
+        "title": "Cuando asistió la última vez al centro de salud, el servicio fue: ",
+        "choices": [
+         {
+          "value": "1",
+          "text": "bueno"
+         },
+         {
+          "value": "2",
+          "text": "regular"
+         },
+         {
+          "value": "3",
+          "text": "malo"
+         }
+        ]
+       },
+       {
+        "type": "matrixdropdown",
+        "name": "question9",
+        "title": "La última vez que usted o alguien de su familia se enfermó y se trató para curarse, ¿Cuánto gastó en:",
+        "columns": [
+         {
+          "name": "(Q)",
+          "title": "(Q)",
+          "cellType": "text",
+          "inputType": "number"
+         }
+        ],
+        "choices": [
+         1,
+         2,
+         3,
+         4,
+         5
+        ],
+        "rows": [
+         {
+          "value": "1",
+          "text": "Consulta"
+         },
+         {
+          "value": "2",
+          "text": "Medicina"
+         },
+         {
+          "value": "3",
+          "text": "Transporte /traslado"
+         },
+         {
+          "value": "4",
+          "text": "Exámenes de laboratorio"
+         },
+         {
+          "value": "5",
+          "text": "Alimentación"
+         }
+        ]
+       },
+       {
+        "type": "boolean",
+        "name": "EstadoPrenatal",
+        "label": "¿Recibió alguna vez control pre-natal? "
+       },
+       {
+        "type": "text",
+        "name": "question11",
+        "visibleIf": "{EstadoPrenatal} = true",
+        "title": "¿En cuántos embarazos recibió control prenatal?",
+        "inputType": "number"
+       },
+       {
+        "type": "text",
+        "name": "question10",
+        "visibleIf": "{EstadoPrenatal} = true",
+        "title": "En el último embarazo que recibió control pre-natal, ¿Cuántas veces asistió al control?",
+        "inputType": "number"
+       }
+      ]
+     }
+    ]
+   }
